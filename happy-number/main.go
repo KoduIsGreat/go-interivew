@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"strconv"
 )
 
 func main() {
@@ -30,11 +29,11 @@ func isHappy(num int) bool {
 }
 
 func sumDigitSquares(num int) int {
-	numStr := strconv.Itoa(num)
 	var acc int
-	for _, digitChar := range numStr {
-		digit, _ := strconv.Atoi(string(digitChar))
+	for num != 0 {
+		digit := num % 10
 		acc += digit * digit
+		num /= 10
 	}
 	return acc
 }
