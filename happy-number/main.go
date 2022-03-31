@@ -14,7 +14,7 @@ func main() {
 	fmt.Printf("Output: %t", isHappy(n))
 }
 
-func isHappy(num int) bool {
+func isHappyMap(num int) bool {
 	seen := make(map[int]struct{}, 0)
 	for {
 		if num == 1 {
@@ -26,6 +26,16 @@ func isHappy(num int) bool {
 		seen[num] = struct{}{}
 		num = sumDigitSquares(num)
 	}
+}
+
+func isHappy(num int) bool {
+	slow := sumDigitSquares(num)
+	fast := sumDigitSquares(slow)
+	for slow != fast && fast != 1 {
+		slow = sumDigitSquares(slow)
+		fast = sumDigitSquares(sumDigitSquares(fast))
+	}
+	return fast == 1
 }
 
 func sumDigitSquares(num int) int {
