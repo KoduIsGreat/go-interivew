@@ -9,7 +9,7 @@ A happy number is a number defined by the following process:
 Can you determine if a number is happy???
 
 Write an algorithm that returns true if n is a happy number, and false if not.
-
+```
 Example 1:
 Input: n = 19
 Output: true
@@ -27,3 +27,4 @@ Output: false
 
 Constraints:
 1 <= n <= 231 - 1
+```
