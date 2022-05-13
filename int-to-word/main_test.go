@@ -12,18 +12,13 @@ func TestRomanToInt(t *testing.T) {
 			Integer: 3,
 		},
 		{
-			Word: "Zero",
-			Integer: 0,
-		},
-		{
-			Word: "One Hundered Fifty One",
+			Word:    "One Hundered Fifty One",
 			Integer: 151,
 		},
 		{
 			Integer: 12345,
-			Word: "Twelve Thousand Three Hundred Forty Five",
+			Word:    "Twelve Thousand Three Hundred Forty Five",
 		},
-
 	} {
 		t.Run(tc.Word, func(t *testing.T) {
 			if got := intToWord(tc.Integer); got != tc.Word {
